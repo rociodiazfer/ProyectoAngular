@@ -1,0 +1,45 @@
+<div  class = "contenedor">
+<h1> EJEMPLOS ngFor</h1>
+<b> ngFor-ejemplos con una tabla</b>
+
+<table border="2">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Apellido</th>
+<th>Correo electrónico</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor = "let user of users">
+<td> {{user.firstName}}</td>
+<td>{{user.lastName}}</td>
+<td>{{user.emailId}}</td>
+</tr>
+</tbody>
+</table>
+
+<b> ngFor - Ejemplo en una lista</b>
+<ul>
+<li *ngFor = " let user of users ">
+{{user.firstName}},
+{{user.lastName}}
+</li>
+</ul>
+
+<b> ngFor - Obtener el índice del array que recorremos</b>
+<ul>
+<li  *ngFor = " let user of users; let i = index ">
+{{i}}. {{user.firstName}}, {{user.lastName}}
+</li>
+</ul>
+<b>ngFor - Comprobamos si es el primer y último elemento de la lista</b>
+<div *ngFor = " let user of users; let i = index; let f=first; let l=last;">
+Fila {{i}} : Nombre: {{user.firstName}} {{user.lastName }} ¿es el primer elemento? {{f}}, ¿es el ultimo elemento? {{l}}
+</div>
+  <p></p>
+<b>nfFor - Comprobamos si es un elemento par o impar</b>
+<div *ngFor = " let user of users; let i = index; let e=even; let o=odd; " >
+Fila {{i}} : Nombre: {{user.firstName}} {{ user.lastName}}, ¿es par? {{e}}, ¿es impar? {{o}}
+</div>
+</div>
